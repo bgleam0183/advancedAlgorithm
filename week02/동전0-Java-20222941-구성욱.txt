@@ -1,0 +1,19 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		int[] list = {500,100,50,10};
+		int n = 1260;
+		int cnt = 0;
+		
+		for (int coin : list) {
+		    cnt += n / coin;
+		    //System.out.println("["+coin+"]\t>> "+(n/coin)+"개")/
+		    n %= coin;
+		}
+		
+		System.out.println("n = [" + n + "] cnt = [" + cnt + "]");
+	}
+}

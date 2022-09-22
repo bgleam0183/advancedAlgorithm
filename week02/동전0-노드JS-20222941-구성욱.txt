@@ -1,0 +1,22 @@
+var readline = require('readline');
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+var input = [];
+var cnt = 0;
+
+rl.on("line", (line) => {
+  input.push(line);
+}).on("close", () => {
+    var condition = input[0].split(' ').map(value => parseInt(value));
+    var list = input.slice(1);
+    list = list.map((value) => parseInt(value)).reverse();
+    
+    list.map(coin => {
+        cnt += parseInt(condition[1] / coin);
+        condition[1] %= coin;
+    })
+    console.log(cnt);
+});
