@@ -5,23 +5,19 @@ var rl = readline.createInterface({
 });
 
 var input = [];
-var cnt = 0;
 
 rl.on("line", (line) => {
   input.push(line);
 }).on("close", () => {
-    var num = input[0].split("");
-    var result = num[0];
+    var num = input[1].split(" ");
+    var realVal = 0;
+    var result = 0;
 
-    num = num.slice(1);
+    num.sort((a, b) => a-b).map((item, idx) => {
+        realVal = realVal + parseInt(item);
 
-    num.map(item => {
-        if (item <= 1 || result == 0) {
-            result += item;
-        }
-        else {
-            result *= item;
-        }
-    })
+        result += realVal;
+    });
+
     console.log(result);
 });
