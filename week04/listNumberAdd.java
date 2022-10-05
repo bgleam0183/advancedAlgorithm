@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class listNumberAdd {
+public class ListNumberAdd {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

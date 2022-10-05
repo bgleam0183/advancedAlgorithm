@@ -15,7 +15,9 @@ rl.on("line", (line) => {
 	
 	
 	list.map(item => {
-		result += parseInt(item);
+        if (item != " ") {
+            result += parseInt(item);
+        }
 	})
 	
     console.log(result);
